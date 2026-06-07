@@ -4,7 +4,10 @@ const N_Y: u16 = 20;
 
 
 fn main() {
-    let mut state: Vec<bool> = Vec::WithCapacity()
+    let mut state: Vec<bool> = Vec::with_capacity(N_X * N_Y);
+    let mut target: Vec<f64> = Vec::with_capacity(N_P);
+    let error = calculate_mse(state, target);
+    println!("{error}")
     println!("Hello, world!");
 }
 
@@ -12,7 +15,7 @@ fn main() {
 fn calculate_mse(state: Vec<bool>, target: Vec<f64>) -> f64 {
 let mut total_error: f64 = 0.0;
 for t_val in target{
-for idx, magnet in state.enumerate(){
+for (idx, magnet) in state.enumerate(){
 total_error += 1.0;
 }
 }
